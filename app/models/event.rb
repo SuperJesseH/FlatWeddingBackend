@@ -1,3 +1,3 @@
 class Event < ApplicationRecord
-  # test
+  belongs_to :user
 end

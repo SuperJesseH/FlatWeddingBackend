@@ -10,6 +10,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.boolean :rsvp
       t.string :notes
       t.string :status
+      t.string :username
+      t.string :password_digest
 
       t.timestamps
     end

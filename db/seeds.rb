@@ -1,6 +1,6 @@
 jesse = User.create([{first_name: 'Jesse', last_name: 'Horwitz', street: 'Bakers Street'}])
 alec = User.create([{first_name: 'Alec', last_name: 'Horwitz', street: 'Bakers Street'}])
-bob = User.create([{first_name: 'Bob', last_name: 'Horwitz', street: 'Bakers Street'}])
+bob = User.create([{first_name: 'Bob', last_name: 'Horwitz', street: 'Bakers Street', username: "BobHorwitz"}])
 
 
 first = Post.create([{name: 'first', body: 'hyyyeeee', user_id:1}])

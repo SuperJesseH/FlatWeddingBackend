@@ -10,7 +10,10 @@ class Api::V1::UsersController < ApplicationController
     @user=User.new
 
     @user.username = params[:username]
-    @user.password_digest = params[:password_digest]
+    @user.password_digest = params[:password]
+    @user.first_name = params[:first_name]
+    @user.last_name = params[:last_name]
+    @user.notes = params[:notes]
 
     if(@user.save)
 

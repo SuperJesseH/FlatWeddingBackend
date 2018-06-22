@@ -2,9 +2,11 @@ class Api::V1::SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params["username"])
-    if (@user && @user.authenticate(params["password_digest"]))
+    if (@user && @user.authenticate(params["password"]))
 
-      token = generate_token
+      payload = {id: @user.id}
+
+      token = JWT.encode payload, ENV['JWT_SECRET'], 'HS256'
 
       render json:{
         token: token,

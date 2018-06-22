@@ -7,13 +7,14 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user=User.new
+    @user=User.new(user_params)
 
-    @user.username = params[:username]
-    @user.password_digest = params[:password]
-    @user.first_name = params[:first_name]
-    @user.last_name = params[:last_name]
-    @user.notes = params[:notes]
+
+    # @user.username = params[:username]
+    # @user.password_digest = params[:password]
+    # @user.first_name = params[:first_name]
+    # @user.last_name = params[:last_name]
+    # @user.notes = params[:notes]
 
     if(@user.save)
 
@@ -23,7 +24,8 @@ class Api::V1::UsersController < ApplicationController
       token = JWT.encode payload, ENV['JWT_SECRET'], 'HS256'
 
       render json:{
-        token: token
+        token: token,
+        id: @user.id
       }
     else
       render json: {
@@ -35,6 +37,17 @@ class Api::V1::UsersController < ApplicationController
   def show
     @user = User.find(params['id'])
     render json: @user
+  end
+
+  private
+
+  def user_params
+    params.permit(
+      :first_name,
+      :last_name,
+      :username,
+      :password
+    )
   end
 
 

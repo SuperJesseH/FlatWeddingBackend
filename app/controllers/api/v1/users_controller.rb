@@ -27,6 +27,7 @@ class Api::V1::UsersController < ApplicationController
         token: token,
         id: @user.id
       }
+
     else
       render json: {
         errors: @user.errors.full_messages
@@ -35,6 +36,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
+    # reconsider this might not be secure or neccesary
     @user = User.find(params['id'])
     render json: @user
   end

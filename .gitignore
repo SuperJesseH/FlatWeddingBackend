@@ -24,3 +24,6 @@
 
 #this hides my secrets
 .env
+
+#this hides my user database
+/db/seeds.rb

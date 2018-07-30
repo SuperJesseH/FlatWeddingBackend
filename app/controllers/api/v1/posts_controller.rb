@@ -1,5 +1,5 @@
 class Api::V1::PostsController < ApplicationController
-before_action :requires_login, only: [:index]
+# before_action :requires_login, only: [:index]
 
   def index
     @posts = Post.all
@@ -19,6 +19,7 @@ before_action :requires_login, only: [:index]
     params.require(:post).permit(
       :name,
       :body,
+      :image,
       :user_id
     )
   end

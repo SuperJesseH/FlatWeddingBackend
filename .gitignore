@@ -26,4 +26,4 @@
 .env
 
 #this hides my user database
-/db/seeds.rb*
+db/seeds.rb

@@ -1,5 +1,5 @@
 
-jesse = User.create([{first_name: 'Jesse', last_name: 'Horwitz', street: 'Bakers Street', username:"jesseHorwitz",  password:"password"}, {first_name: 'Alec', last_name: 'Horwitz', street: 'Bakers Street', username:"alecHorwitz",  password:"password"}, {first_name: 'Melanie', last_name: 'Reschke', street: 'Bakers Street', username:"MelanieRes",  password:"password"}])
+jesse = User.create([{first_name: 'Jesse', last_name: 'Horwitz', street: 'Bakers Street', username:"jesseHorwitz",  password:"password"}, {first_name: 'Alec', last_name: 'Horwitz', street: 'Bakers Street', username:"alecHorwitz",  password:"password"}, {first_name: 'Melanie', last_name: 'Reschke', street: 'Bakers Street', username:"MelanieReschke",  password:"password"}])
 
 
 
